@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTGeats</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+    />
+  
+
+  </head>
+
+  <body>
+    <div id="cont">
+      <nav id="header">
+        <div id="title"><img src="./Logo.svg" alt="logo"/></div>
+          
+        
+        <ul>
+          <li class="models"><a href="#">Home</a></li>
+          <li class="models"><a href="#">About</a></li>
+          <li class="models"><a href="#">Menu</a></li>
+          <li class="models"><a href="#">Blog</a></li>
+          <li class="models"><a href="#">Contact</a></li>
+          <div class="upper">
+          <img class="img1" src="./search.svg" alt="search item" />
+          <div class="add-alert">
+            <img
+              class="img2"
+              src="./cart.svg"
+              alt="add to cart"
+              onclick="openModal()"
+            />
+            <div class="alert"></div>
+          </div></div>
+        </ul>
+      </nav>
+
+      <!-- Landing Section/Page -->
+      <div id="hero-section">
+        <div id="heading">
+          <h1 class="first-main-heading">Authentic Home food in India</h1>
+          <p>
+            JTGeats is a courier service in which authentic home cook food is
+            delivered to a customer.
+          </p>
+          <form action="#" class="searchbar">
+            <input type="text" placeholder="Search food you love" />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div id="cooking">
+          <img src="./cook.svg" alt="Cooking" class="img3" />
+        </div>
+      </div>
+
+      
+      <div id="home-kitchen-section">
+        <h1 id="heading2">Home Kitchen</h1>
+      </div>
+
+
+      <div id="hero-kitchen-section">
+          <!-- separate script repeat-code.js written -->
+        <script>
+            var userDetail = [
+              {img:"./img/image copy 3.png",description:"Home made pizza",price:"₹190",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg",discount: "50%"},
+              {img:"./img/image copy 7.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg"},
+              {img:"./img/image copy 8.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg",discount: "20%"},
+              {img:"./img/image copy 11.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg"},
+              {img:"./img/image copy 5.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg",discount: "50%"},
+              {img:"./img/image copy 6.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg"},
+              {img:"./img/image copy 7.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg",discount: "20%"},
+              {img:"./img/image copy 8.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg",discount: "50%"},
+              {img:"./img/image copy 9.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg",discount: "20%"},
+              {img:"./img/image copy 10.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg"},
+              {img:"./img/image copy 9.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg",discount: "50%"},
+              {img:"./img/image copy 11.png",description:"Home made pizza",price:"₹123",rateIcon:"./star.svg",rating:"4.7", time: "50-79 min", cartIcon: "./add.svg"},
+              // ... rest of the items
+            ];
+            document.getElementById('hero-kitchen-section').innerHTML = userDetail.map(user => `
+  <div class="block">
+    ${user.discount ? `<div class="discount-badge">${user.discount}</div>` : ``}
+    <div class="details">
+      <img src="${user.img}" alt="pizza" class="img4" />
+      <div class="row">
+        <p>${user.description}</p>
+        <p>${user.price}</p>
+      </div>
+      <div class="row">
+        <div class="rate">
+          <div class="rating">
+            <img src="${user.rateIcon}" alt="star" />
+            <p>${user.rating}</p>
+          </div>
+          <div class="time">
+            <p>${user.time}</p>
+          </div>
+        </div>
+        <div class="plus">
+          <img src="${user.cartIcon}" />
+        </div>
+      </div>
+    </div>
+  </div>
+`).join('');
+
+   
+
+            
+
+      
+
+    
+
+
+
+
+
+
+   
+      
+
+          
+        
+  
+
+          </script>
+      </div>
+       
+
+
+      
+        
+
+
+      
+
+      <!-- ---------------- SLIDER ----------------- -->
+      <div id="popular-section">
+      <div class="popular-items-header">
+        <h1>Popular Items</h1>
+      </div>
+      <div class="scroller">
+
+        <!-- left arrow button -->
+        <img class='rev-btn' src="reverse.svg" alt="back" id="btn-rev" onclick="reverse()" />
+
+        <div class="container">
+   <!-- ALL BLOCKS -->
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 10.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="plus0ne.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="discount-badge">20%</div>
+        <div class="details shadow">
+          <div>
+            <img
+              src="./img/image copy 11.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Tandoori Chicken</p>
+            <p>₹184</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.3</p>
+              </div>
+              <div class="time">
+                <p>15-29 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="discount-badge">20%</div>
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 5.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Chilli Chicken</p>
+            <p>₹116</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.1</p>
+              </div>
+              <div class="time">
+                <p>30-40 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 6.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 7.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 8.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 9.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 10.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 11.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 2.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 5.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="details">
+          <div>
+            <img
+              src="./img/image copy 8.png"
+              alt="pizza"
+              class="img4"
+            />
+          </div>
+          <div class="row">
+            <p>Home made pizza</p>
+            <p>₹190</p>
+          </div>
+          <div class="row">
+            <div class="rate">
+              <div class="rating">
+                <img src="Star.svg" alt="star" />
+                <p>4.7</p>
+              </div>
+              <div class="time">
+                <p>50-79 min</p>
+              </div>
+            </div>
+            <div class="plus">
+              <img src="add.svg" alt="add to cart" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     
+
+          <!-- forward arrow button -->
+          <img
+            src="./forward.svg"
+            alt="forward"
+            id="btn-for"
+            onclick="forward()"
+          />
+        </div>
+        <!-- </div> -->
+        <div class="request-dish">
+          <button type="submit" onclick="openModal2()">Request a Dish</button>
+        </div>
+      </div>
+
+      <!-- --------------------- VIDEO SECTION ------------------ -->
+      <div id="video-section">
+        <div class="video-h-1">
+          <p>We are providing best</p>
+          <p>home cooked food delivery service.</p>
+        </div>
+        <div class="video-h-2">
+          <p>
+            Away from home and craving the tasty homemade recipes? Choose from
+            selection of our delicious home cooked dishes
+          </p>
+        </div>
+        <div class="cooking-video">
+          <video
+            src="./video/How to make Miniature Spaghetti Meatballs _ Miniature Cooking Recipe _ Tiny Cakes.mp4"
+            class="cooking-vid"
+            onclick="playPauseVideo()"
+          >
+            Video format not supported
+          </video>
+          <div class="play-pause-effect" onclick="playPauseVideo()"></div>
+        </div>
+        <div class="green-color"></div>
+      </div>
+
+      <!-- contact us section -->
+      <div id="cont-sec">
+        <div class="part1">
+          <div class="subpart1">
+            <div class="question">
+              <p>Do you have a question<br />or want to become a seller?</p>
+              <p class="fill">
+                Fill this form and our manager will contact you next 48 hours.
+              </p>
+            </div>
+            <div class="forms">
+              <form action="#">
+                <div class="input1">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    class="inner-input1"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Your e-mail"
+                    class="inner-input2"
+                  />
+                </div>
+                <div class="input2">
+                  <textarea placeholder="Your message"></textarea>
+                </div>
+                <div class="submit-btn">
+                  <button type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="part2">
+          <img src="./scooty.svg" alt="food-delivery" />
+        </div>
+      </div>
+
+      <!-- --------------------- footer section ------------------------ -->
+
+      <footer>
+        <nav id="header">
+          <div id="title">
+            <img src="./Logo.svg" alt="JTGeats" />
+          </div>
+          <ul>
+            <li class="models"><a href="#">Home</a></li>
+            <li class="models"><a href="#">About</a></li>
+            <li class="models"><a href="#">Menu</a></li>
+            <li class="models"><a href="#">Blog</a></li>
+            <li class="models"><a href="#">Contact</a></li>
+            <div class="end">
+            <img class="img11" src="./facebook.svg" alt="facebook" />
+            <img class="img21" src="./insta.svg" alt="instagram" /></div>
+            </ul>
+          
+        </nav>
+        <hr />
+      </footer>
+    </div>
+
+
+    <!-- add to cart modal -->
+    <div class="background-blured hide1">
+      <div class="add-to-cart-popup">
+        <img src="cart.svg" />
+        <h1>Cart is Empty</h1>
+        <p>Add some item to the cart to checkout</p>
+        <button type="submit" onclick="closeModal()">Back to Menu</button>
+      </div>
+    </div>
+
+    <!-- request a dish modal -->
+    <div class="background-blured hide2">
+      <div class="request-a-dish">
+        <div class="request-form">
+          <div class="inner1"><h1>Request a Dish</h1></div>
+          <div class="inner2">
+            <label for="name">Name*</label><br />
+            <input
+              type="text"
+              name="Name"
+              placeholder="Enter Name of the dish"
+              id="name"
+            /><br /><br /><br />
+            <label for="url">Upload an image</label><br />
+            <input
+              type="url"
+              name="url"
+              placeholder="Paste a URL"
+              id="upload"
+            />
+          </div>
+          <div class="inner3">
+            <div id="cancel">
+              <button type="submit" onclick="closeModal2()">Cancel</button>
+            </div>
+            <div id="submit">
+              <button type="submit" onclick="closeModal2()">
+                Submit Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    </body>
+    
+</body>
+
+      
+
+
+
+  <!-- script for play pause video -->
+  <script src="jscript/play-pause.js"></script>
+
+  <!-- script for Add to cart modal -->
+  <script src="jscript/add-to-cart-modal.js"></script>
+
+  <!-- script for request a dish modal -->
+  <script src="jscript/request-dish.js"></script>
+
+  <!-- script for slider -->
+  <script src="jscript/slider.js"></script>
+
+  <script src="jscript/repeat-code.js"></script>
+</html>
